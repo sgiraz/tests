@@ -9,14 +9,11 @@ body:
       Verify first that your issue is not [already reported on GitHub][issue search].
 
       [issue search]: https://github.com/robotology/icub-tech-support/search?q=is%3Aissue&type=issues    
-- type: dropdown
+- type: input
   attributes:
-    id: robots
     label: Device name 🤖
     description: Please enter the name of your robot or device. If you are allowed, also assign the corresponding label 🔖
-    options:
-      - ciao1
-      - ciao2
+    placeholder: iCub[Town][XY], R1SN[XYZ], IIT[ABCDE]_SN[XYZ]...
   validations:
     required: true
 - type: textarea
