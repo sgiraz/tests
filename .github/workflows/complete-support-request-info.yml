@@ -14,11 +14,11 @@ jobs:
 
     steps:
     - name: Checkout the repo
-      uses: actions/checkout@master
+      uses: actions/checkout@main
 
     - name: Verify the form type
       run: |
-        gh issue view ${ISSUE_NUMBER} --json labels --jq '.labels[].name' > labels.txt
+        gh issue view ${ISSUE_NUMBER} --json labels --jq ".labels[].name" > labels.txt
         echo "Found the following labels 🏷️"
         cat labels.txt
         echo ""
@@ -33,7 +33,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         ISSUE_NUMBER: ${{ github.event.issue.number }} 
     
-    - name: Parse the purchase order
+    - name: Parse the support request
       uses: stefanbuck/github-issue-parser@v3.0.1
       id: issue-parser
       with:
