@@ -67,6 +67,13 @@ body:
       - "iCubRome02"
       - "iCubSeoul01"
       - "iCubShanghai01 S/N:049"
+      - "iCubSheffield01"
+      - "iCubShenzhen01"
+      - "iCubSingapore01"
+      - "iCubTwente01"
+      - "iCubUrbana01"
+      - "iCubValparaiso01"
+      - "iCubWaterloo01"
 
   validations:
     required: true
