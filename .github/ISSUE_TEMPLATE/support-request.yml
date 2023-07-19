@@ -76,7 +76,6 @@ body:
       - "iCubWaterloo01"
       - "iCubZagreb01"
       - "iCubNancy01"
-      - "R1SN000"
 
   validations:
     required: true
