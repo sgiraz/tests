@@ -1,8 +1,7 @@
 name: 🤖 HW Support Request
 description: Support request for HW maintenance
-#labels: ["form-type-support"]
-labels: ["bug", "triage"]
 assignees: "sgiraz,AntonioConsilvio"
+labels: ["form-type-support"]
 
 body:
 - type: markdown
