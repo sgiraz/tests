@@ -1,62 +1,41 @@
-name: Bug Report
-description: File a bug report
-title: "[Bug]: "
-labels: ["bug", "triage"]
-assignees:
-  - octocat
+name: 🤖 HW Support Request
+description: Support request for HW maintenance
+assignees: "sgiraz,AntonioConsilvio"
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Thanks for taking the time to fill out this bug report!
-  - type: input
-    id: contact
-    attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
-    validations:
-      required: false
-  - type: textarea
-    id: what-happened
-    attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-      value: "A bug happened!"
-    validations:
-      required: true
-  - type: dropdown
-    id: version
-    attributes:
-      label: Version
-      description: What version of our software are you running?
-      options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
-    validations:
-      required: true
-  - type: dropdown
-    id: browsers
-    attributes:
-      label: What browsers are you seeing the problem on?
-      multiple: true
-      options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
-  - type: textarea
-    id: logs
-    attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
-      render: shell
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
-      options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
+- type: markdown
+  attributes:
+    value: |
+      ⚠
+      Verify first that your issue is not [already reported on GitHub][issue search].
+
+      [issue search]: https://github.com/robotology/icub-tech-support/search?q=is%3Aissue&type=issues    
+- type: dropdown
+  id: robots
+  attributes:
+    label: Device name 🤖
+    description: Please enter the name of your robot or device. If you are allowed, also assign the corresponding label 🔖
+    options:
+      - ciao1
+      - ciao2
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Request/Failure description
+    description: Summarize the request concisely.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Detailed context
+    description: Provide a more detailed description of the problem.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Additional context
+    description: Please attach here any material you may consider useful (pictures, screenshots, logs, etc.).
+- type: textarea
+  attributes:
+    label: How does it affect you?
+    description: Optional field where you can quantify the impact of the issue on your workflow.
