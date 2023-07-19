@@ -42,7 +42,7 @@ jobs:
 
     - name: Check Selected Robot
       if: env.verify=='yes'
-      id: check-2
+      id: check-1
       run: |
         if [ "${ROBOT}" == "None" ]; then
           echo "WARNING_BODY=- [ ] select the Robot." >> $GITHUB_OUTPUT
@@ -155,33 +155,27 @@ jobs:
     #   env:
     #     WAREHOUSE_NOTES: ${{ steps.issue-parser.outputs.issueparser_warehouse_notes }}
         
-    # - name: Print URL of problematic issue
-    #   if: (env.verify=='yes') && (env.trigger_warning=='yes')
-    #   run: |
-    #     echo "❌ Problems detected with ${{ github.event.issue.html_url }}"
+    - name: Print URL of problematic issue
+      if: (env.verify=='yes') && (env.trigger_warning=='yes')
+      run: |
+        echo "❌ Problems detected with ${{ github.event.issue.html_url }}"
         
-    # - name: Create comment
-    #   if: (env.verify=='yes') && (env.trigger_warning=='yes')
-    #   uses: peter-evans/create-or-update-comment@v2
-    #   with:
-    #     issue-number: ${{ github.event.issue.number }}
-    #     body: |
-    #       ## ⚠️ Detected missing mandatory information
-    #       Hi @${{ github.event.issue.user.login }} 👋🏻
+    - name: Create comment
+      if: (env.verify=='yes') && (env.trigger_warning=='yes')
+      uses: peter-evans/create-or-update-comment@v2
+      with:
+        issue-number: ${{ github.event.issue.number }}
+        body: |
+          ## ⚠️ Detected missing mandatory information
+          Hi @${{ github.event.issue.user.login }} 👋🏻
           
-    #       Some of the following points need your attention.
+          Some of the following points need your attention.
           
-    #       You are required to:
-    #       ${{ steps.check-1.outputs.WARNING_BODY }}
-    #       ${{ steps.check-2.outputs.WARNING_BODY }}
-    #       ${{ steps.check-3.outputs.WARNING_BODY }}
-    #       ${{ steps.check-4.outputs.WARNING_BODY }}
-    #       ${{ steps.check-5.outputs.WARNING_BODY }}
-    #       ${{ steps.check-6.outputs.WARNING_BODY }}
-    #       ${{ steps.check-7.outputs.WARNING_BODY }}
-    #       ${{ steps.check-8.outputs.WARNING_BODY }}
+          You are required to:
+          ${{ steps.check-1.outputs.WARNING_BODY }}
+
           
-    #       <sub>Please, mark the points above as solved once done.</sub>
-    #       [^1]: To get to know the allowed options for the dropdown fields, you may peruse the [**`template`**](../blob/master/.github/ISSUE_TEMPLATE/purchase-order.yml).
-    #     reactions: 'confused'
+          <sub>Please, mark the points above as solved once done.</sub>
+          [^1]: To get to know the allowed options for the dropdown fields, you may peruse the [**`template`**](../blob/master/.github/ISSUE_TEMPLATE/purchase-order.yml).
+        reactions: 'confused'
         
