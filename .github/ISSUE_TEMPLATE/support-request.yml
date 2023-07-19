@@ -78,6 +78,7 @@ body:
       - "R1 S/N:002"
       - "R1 S/N:003"
 - type: textarea
+  id: description
   attributes:
     label: Request/Failure description
     description: Summarize the request concisely.
