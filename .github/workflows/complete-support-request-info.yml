@@ -45,24 +45,26 @@ jobs:
       id: check-1
       run: |
         if [ "${ROBOT}" == "None" ]; then
-          echo "WARNING_BODY=- [ ] select the Robot and adjust the Robot Name in the Issue Title." >> $GITHUB_OUTPUT
+          echo "WARNING_BODY=- [ ] enter the Robot Name and adjust the [Robot Name] in the Issue Title." >> $GITHUB_OUTPUT
           echo "trigger_warning=yes" >> $GITHUB_ENV
+          ${{ github.event.issue.title }}="Robot Name – "
         else
-          echo "WARNING_BODY=- [x] select the Robot." >> $GITHUB_OUTPUT
+          echo "WARNING_BODY=- [x] enter the Robot." >> $GITHUB_OUTPUT
+          ${{ github.event.issue.title }}="$ROBOT – "
         fi
       env:
         ROBOT: ${{ steps.issue-parser.outputs.issueparser_robot }}
 
-    # - name: Check Issue Title
-    #   if: env.verify=='yes'
-    #   id: check-1
-    #   run: |
-    #     if [ "${{ github.event.issue.title }}" == "[short description]" ]; then
-    #       echo "WARNING_BODY=- [ ] give the issue a meaningful Title." >> $GITHUB_OUTPUT
-    #       echo "trigger_warning=yes" >> $GITHUB_ENV
-    #     else
-    #       echo "WARNING_BODY=- [x] give the issue a meaningful Title." >> $GITHUB_OUTPUT
-    #     fi
+    - name: Check Issue Title
+      if: env.verify=='yes'
+      id: check-2
+      run: |
+        if [ "${{ github.event.issue.title }}" == "" ]  || [ "${{ github.event.issue.title }}" == "Robot Name" ]; then
+          echo "WARNING_BODY=- [ ] give the issue a meaningful Title." >> $GITHUB_OUTPUT
+          echo "trigger_warning=yes" >> $GITHUB_ENV
+        else
+          echo "WARNING_BODY=- [x] give the issue a meaningful Title." >> $GITHUB_OUTPUT
+        fi
         
     # - name: Check Applicant
     #   if: env.verify=='yes'
@@ -173,6 +175,7 @@ jobs:
           
           You are required to:
           ${{ steps.check-1.outputs.WARNING_BODY }}
+          ${{ steps.check-2.outputs.WARNING_BODY }}
 
           
           <sub>Please, mark the points above as solved once done.</sub>
