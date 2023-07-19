@@ -20,7 +20,6 @@ body:
       - "ergoCub 1.1 S/N002"`
       - "iCubBarcelona01"
       - "iCubBielefeld01"
-      - "iCubBielefeld03"
   validations:
     required: true
 - type: textarea
