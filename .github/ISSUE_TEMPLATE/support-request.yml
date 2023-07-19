@@ -15,7 +15,7 @@ body:
     label: Device name 🤖
     description: Please enter the name of your robot or device. If you are allowed, also assign the corresponding label 🔖
     options:
-      - "[ergoCub 1.0 S/N:000][1]"
+      - "[ergoCub 1.0 S/N:000](https://www.google.com)"
       - "ergoCub 1.1 S/N:001"
       - "ergoCub 1.1 S/N:002"
       - "iCubBarcelona01"
@@ -103,5 +103,3 @@ body:
   attributes:
     label: How does it affect you?
     description: Optional field where you can quantify the impact of the issue on your workflow.
-
-[1]: https://www.google.com
