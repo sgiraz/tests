@@ -75,7 +75,11 @@ body:
       - "iCubValparaiso01"
       - "iCubWaterloo01"
       - "iCubZagreb01"
-      - "iCubNancy01"
+      - "place holder for missing one"
+      - "R1SN000"
+      - "R1SN001"
+      - "R1SN002"
+      - "R1SN003"
       
 
   validations:
