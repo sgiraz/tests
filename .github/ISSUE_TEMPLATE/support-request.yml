@@ -15,9 +15,9 @@ body:
     label: Device name 🤖
     description: Please enter the name of your robot or device. If you are allowed, also assign the corresponding label 🔖
     options:
-      - "ergoCub 1.0 S/N000"
-      - "ergoCub 1.1 S/N001"
-      - "ergoCub 1.1 S/N002"
+      - "ergoCub 1.0 S/N:000"
+      - "ergoCub 1.1 S/N:001"
+      - "ergoCub 1.1 S/N:002"
       - "iCubBarcelona01"
       - "iCubBielefeld01"
       - "iCubBielefeld03"
@@ -39,7 +39,7 @@ body:
       - "iCubGenova08"
       - "iCubGenova09 (iRonCub3)"
       - "iCubGenova10"
-      - "iCubGenova11 S/N050"
+      - "iCubGenova11 S/N:050"
       - "iCubGrenoble01"
       - "iCubHamburg01"
       - "iCubHeadV3"
