@@ -59,16 +59,25 @@ jobs:
         
 
     # Set issue title and label according to seleced Robot Name
-    - name: Update issue
+    - name: Update issue title
       uses: actions-cool/issues-helper@v3
-      id: issue-updater
+      id: issue-updater-title
       with:
         actions: 'update-issue'
         token: ${{ secrets.GITHUB_TOKEN }}
         issue-number: ${{ github.event.issue.number }}
         title: "${{ steps.check-1.outputs.ROBOT_NAME }} - ${{ github.event.issue.title }}"
-        labels: "${{ steps.issue-parser.outputs.issueparser_labels }},${{ steps.check-1.outputs.ROBOT_LABEL }}"
         update-mode: 'replace'
+
+    # Add Robot Label according to seleced Robot Name
+    - name: Add robot label
+      uses: actions-cool/issues-helper@v3
+      id: issue-updater-label
+      with:
+        actions: 'add-labels'
+        token: ${{ secrets.GITHUB_TOKEN }}
+        issue-number: ${{ github.event.issue.number }}
+        labels: ${{ steps.check-1.outputs.ROBOT_LABEL }}
 
     - name: Check Issue Title
       if: env.verify=='yes'
