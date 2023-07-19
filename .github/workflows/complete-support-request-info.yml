@@ -36,12 +36,6 @@ jobs:
       id: issue-parser
       with:
         template-path: .github/ISSUE_TEMPLATE/support-request.yml
-
-    - name: Update issue fields
-      uses: actions-cool/issues-helper@v3
-      id: issue-updater
-      with:
-        actions: 'update-issue'
         
     - name: Print the fields
       run: echo '${{ steps.issue-parser.outputs.jsonString }}'
@@ -53,13 +47,23 @@ jobs:
         if [ "${ROBOT}" == "None" ]; then
           echo "WARNING_BODY=- [ ] enter the Robot Name and adjust the [Robot Name] in the Issue Title." >> $GITHUB_OUTPUT
           echo "trigger_warning=yes" >> $GITHUB_ENV
-          ${{ steps.issue-updater.title }}="Robot Name – "
         else
           echo "WARNING_BODY=- [x] enter the Robot." >> $GITHUB_OUTPUT
-          ${{ steps.issue-updater.title }}="$ROBOT – "
         fi
       env:
         ROBOT: ${{ steps.issue-parser.outputs.issueparser_robot }}
+        
+
+    # Set issue title according to seleced Robot Name
+    - name: Update issue
+      uses: actions-cool/issues-helper@v3
+      id: issue-updater
+      with:
+        actions: 'update-issue'
+        token: ${{ secrets.GITHUB_TOKEN }}
+        issue-number: ${{ github.event.issue.number }}
+        title: "${{ steps.issue-parser.outputs.issueparser_robot }} - ${{ github.event.issue.title }}"
+        update-mode: 'replace'
 
     - name: Check Issue Title
       if: env.verify=='yes'
@@ -124,44 +128,6 @@ jobs:
     #   env:
     #     PURCHASE_MOTIVATION: ${{ steps.issue-parser.outputs.issueparser_purchase_motivation }}
 
-    # - name: Check Supplier
-    #   if: env.verify=='yes'
-    #   id: check-6
-    #   run: |
-    #     if [ "${SUPPLIER}" == "" ]; then
-    #       echo "WARNING_BODY=- [ ] enter the Supplier." >> $GITHUB_OUTPUT
-    #       echo "trigger_warning=yes" >> $GITHUB_ENV
-    #     else
-    #       echo "WARNING_BODY=- [x] enter the Supplier." >> $GITHUB_OUTPUT
-    #     fi
-    #   env:
-    #     SUPPLIER: ${{ steps.issue-parser.outputs.issueparser_supplier }}
-        
-    # - name: Check Supplier Reason
-    #   if: env.verify=='yes'
-    #   id: check-7
-    #   run: |
-    #     if [ "${SUPPLIER_REASON}" == "None" ]; then
-    #       echo "WARNING_BODY=- [ ] enter the Supplier Reason.[^1]" >> $GITHUB_OUTPUT
-    #       echo "trigger_warning=yes" >> $GITHUB_ENV
-    #     else
-    #       echo "WARNING_BODY=- [x] enter the Supplier Reason." >> $GITHUB_OUTPUT
-    #     fi
-    #   env:
-    #     SUPPLIER_REASON: ${{ steps.issue-parser.outputs.issueparser_supplier_reason }}
-        
-    # - name: Check Warehouse Notes
-    #   if: env.verify=='yes'
-    #   id: check-8
-    #   run: |
-    #     if [ "${WAREHOUSE_NOTES}" == "None" ]; then
-    #       echo "WARNING_BODY=- [ ] enter the Warehouse Notes.[^1]" >> $GITHUB_OUTPUT
-    #       echo "trigger_warning=yes" >> $GITHUB_ENV
-    #     else
-    #       echo "WARNING_BODY=- [x] enter the Warehouse Notes." >> $GITHUB_OUTPUT
-    #     fi
-    #   env:
-    #     WAREHOUSE_NOTES: ${{ steps.issue-parser.outputs.issueparser_warehouse_notes }}
         
     - name: Print URL of problematic issue
       if: (env.verify=='yes') && (env.trigger_warning=='yes')
