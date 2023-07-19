@@ -1,4 +1,4 @@
-name: Support Request – Complete Support Request Info
+name: Support Request - Complete Support Request Info
 
 on:
  issues:
@@ -45,12 +45,13 @@ jobs:
       id: check-1
       run: |
         if [ "${ROBOT}" == "None" ]; then
-          echo "WARNING_BODY=- [ ] enter the Robot Name and adjust the [Robot Name] in the Issue Title." >> $GITHUB_OUTPUT
+          echo "WARNING_BODY=- [ ] enter the Robot Name, adjust the Issue Title and the Robot Label." >> $GITHUB_OUTPUT
           echo "trigger_warning=yes" >> $GITHUB_ENV
           echo "ROBOT_NAME=Robot Name" >> $GITHUB_OUTPUT
         else
-          echo "WARNING_BODY=- [x] enter the Robot." >> $GITHUB_OUTPUT
+          echo "WARNING_BODY=- [x] enter the Robot Name." >> $GITHUB_OUTPUT
           echo "ROBOT_NAME=${ROBOT}" >> $GITHUB_OUTPUT
+          echo "ROBOT_LABEL=${ROBOT}" >> $GITHUB_OUTPUT
         fi
       env:
         ROBOT: ${{ steps.issue-parser.outputs.issueparser_robot }}
@@ -65,6 +66,7 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         issue-number: ${{ github.event.issue.number }}
         title: "${{ steps.check-1.outputs.ROBOT_NAME }} - ${{ github.event.issue.title }}"
+        labels: ["${{ steps.issue-parser.outputs.issueparser_labels }}", "${{ steps.check-1.outputs.ROBOT_LABEL }}"]
         update-mode: 'replace'
 
     - name: Check Issue Title
