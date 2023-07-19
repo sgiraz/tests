@@ -12,7 +12,7 @@ body:
 
       [issue search]: https://github.com/robotology/icub-tech-support/search?q=is%3Aissue&type=issues    
 - type: dropdown
-  id: robots
+  id: robot
   attributes:
     label: Device name 🤖
     description: Please enter the name of your robot or device. If you are allowed, also assign the corresponding label 🔖
