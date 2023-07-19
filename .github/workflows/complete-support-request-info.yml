@@ -48,6 +48,7 @@ jobs:
           echo "WARNING_BODY=- [ ] enter the Robot Name, adjust the Issue Title and the Robot Label." >> $GITHUB_OUTPUT
           echo "trigger_warning=yes" >> $GITHUB_ENV
           echo "ROBOT_NAME=Robot Name" >> $GITHUB_OUTPUT
+          echo "ROBOT_LABEL=''" >> $GITHUB_OUTPUT
         else
           echo "WARNING_BODY=- [x] enter the Robot Name." >> $GITHUB_OUTPUT
           echo "ROBOT_NAME=${ROBOT}" >> $GITHUB_OUTPUT
@@ -57,7 +58,7 @@ jobs:
         ROBOT: ${{ steps.issue-parser.outputs.issueparser_robot }}
         
 
-    # Set issue title according to seleced Robot Name
+    # Set issue title and label according to seleced Robot Name
     - name: Update issue
       uses: actions-cool/issues-helper@v3
       id: issue-updater
@@ -66,7 +67,7 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         issue-number: ${{ github.event.issue.number }}
         title: "${{ steps.check-1.outputs.ROBOT_NAME }} - ${{ github.event.issue.title }}"
-        labels: "${{ steps.issue-parser.outputs.issueparser_labels }}","${{ steps.check-1.outputs.ROBOT_LABEL }}"
+        labels: ${{ steps.issue-parser.outputs.issueparser_labels }},${{ steps.check-1.outputs.ROBOT_LABEL }}
         update-mode: 'replace'
 
     - name: Check Issue Title
