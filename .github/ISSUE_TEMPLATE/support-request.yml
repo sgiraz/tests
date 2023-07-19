@@ -74,6 +74,9 @@ body:
       - "iCubUrbana01"
       - "iCubValparaiso01"
       - "iCubWaterloo01"
+      - "iCubZagreb01"
+      - "iCubNancy01"
+      - "R1SN000"
 
   validations:
     required: true
