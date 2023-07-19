@@ -22,8 +22,6 @@ jobs:
         echo "Found the following labels 🏷️"
         cat labels.txt
         echo ""
-        echo "ciao xxx"
-        echo ""
         if grep -q ${FORM_TYPE} labels.txt; then
           echo "verify=yes" >> $GITHUB_ENV;
         else
