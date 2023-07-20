@@ -30,7 +30,6 @@ jobs:
           echo "WARNING_BODY=- [ ] enter the Robot Name, adjust the Issue Title and the Robot Label." >> $GITHUB_OUTPUT
           echo "trigger_warning=yes" >> $GITHUB_ENV
           echo "ROBOT_NAME=Robot Name" >> $GITHUB_OUTPUT
-          echo "ROBOT_LABEL=''" >> $GITHUB_OUTPUT
           echo "verify=no" >> $GITHUB_ENV;
         else
           echo "WARNING_BODY=- [x] enter the Robot Name." >> $GITHUB_OUTPUT
