@@ -27,7 +27,7 @@ jobs:
       id: check-1
       run: |
         if [ "${ROBOT}" == "None" ]; then
-          echo "WARNING_BODY=- [ ] enter the Robot Name, adjust the Issue Title and the Robot Label." >> $GITHUB_OUTPUT
+          echo "WARNING_BODY=- [ ] enter the Robot Name, adjust the Issue Title and add the Robot Label." >> $GITHUB_OUTPUT
           echo "trigger_warning=yes" >> $GITHUB_ENV
           echo "ROBOT_NAME=Robot Name" >> $GITHUB_OUTPUT
           echo "verify=yes" >> $GITHUB_ENV;
