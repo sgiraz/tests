@@ -66,14 +66,12 @@ jobs:
       if: env.verify=='yes'
       id: check-2
       run: |
-        if [ $ISSUE_TITLE == "" ]  || [ ${ISSUE_TITLE:0:10} == "Robot Name" ]; then
+        if [ ${{ github.event.issue.title }} == "" ]  || [ ${{ steps.check-1.outputs.ROBOT_NAME }} == "Robot Name" ]; then
           echo "WARNING_BODY=- [ ] give the issue a meaningful Title." >> $GITHUB_OUTPUT
           echo "trigger_warning=yes" >> $GITHUB_ENV
         else
           echo "WARNING_BODY=- [x] give the issue a meaningful Title." >> $GITHUB_OUTPUT
         fi
-      env:
-        ISSUE_TITLE: ${{ github.event.issue.title }}
 
     - name: Check Issue Description
       if: env.verify=='yes'
