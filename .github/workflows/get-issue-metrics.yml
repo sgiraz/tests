@@ -28,7 +28,7 @@ jobs:
       id: issue-metrics
       uses: github/issue-metrics@v2
       env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SEARCH_QUERY: 'repo:owner/repo is:issue created:${{ env.last_3_months }}  -reason:"completed"'
 
     - name: Print output of issue metrics tool
