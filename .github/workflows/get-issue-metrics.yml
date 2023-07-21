@@ -29,8 +29,7 @@ jobs:
       uses: github/issue-metrics@v2
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SEARCH_QUERY: 'repo:robotology/icub-tech-support is:issue closed:${{ env.last_3_months }}'
-        LABELS_TO_MEASURE: 'ergoCub 1.0 S/N:000'
+        SEARCH_QUERY: 'repo:robotology/icub-tech-support is:issue closed:${{ env.last_3_months }}' label:"ergoCub 1.0 S/N:000"
 
     - name: Print output of issue metrics tool using Markdown file
       run: cat ./issue_metrics.md
