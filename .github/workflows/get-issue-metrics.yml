@@ -29,7 +29,7 @@ jobs:
       uses: github/issue-metrics@v2
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SEARCH_QUERY: 'repo:robotology/icub-tech-support is:issue created:${{ env.last_3_months }}  -reason:"completed"'
+        SEARCH_QUERY: 'repo:robotology/icub-tech-support is:issue closed:${{ env.last_3_months }}  -reason:"completed"'
 
     - name: Print output of issue metrics tool using Markdown file
       run: cat ./issue_metrics.md
