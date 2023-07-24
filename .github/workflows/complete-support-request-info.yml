@@ -21,7 +21,7 @@ jobs:
         template-path: .github/ISSUE_TEMPLATE/support-request.yml
         
     - name: Print the fields
-      run: echo '${{ steps.issue-parser.outputs.jsonString }}'
+      run: echo "${{ steps.issue-parser.outputs.jsonString }}"
 
     - name: Check Selected Robot
       id: check-1
