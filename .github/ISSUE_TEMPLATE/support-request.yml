@@ -1,8 +1,6 @@
 name: 🤖 HW Support Request
-title: Short Failure Description
 description: Support request for HW maintenance
 assignees: "sgiraz,AntonioConsilvio"
-labels: ["form-type-support"]
 
 body:
 - type: markdown
@@ -16,11 +14,13 @@ body:
   id: robot
   attributes:
     label: Robot Name 🤖
-    description: Please enter the name of your robot or device. If you are allowed, also assign the corresponding label 🔖
+    description: Please enter the name of your robot.
     options:
       - "ergoCub 1.0 S/N:000"
       - "ergoCub 1.1 S/N:001"
       - "ergoCub 1.1 S/N:002"
+      - "iCubAberystwyth01 S/N:018"
+      - "iCubAnkara01 S/N:12"
       - "iCubBarcelona01 S/N:013"
       - "iCubBielefeld01 S/N:006"
       - "iCubBielefeld03 S/N:019"
@@ -41,7 +41,6 @@ body:
       - "iCubGenova11 S/N:050"
       - "iCubGrenoble01 S/N:023"
       - "iCubHamburg01 S/N:027H"
-      - "iCubHeadV3"
       - "iCubHeidelberg01 S/N:029"
       - "iCubHertfordshire01 S/N:009"
       - "iCubHongKong01 S/N:041"
