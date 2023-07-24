@@ -1,0 +1,35 @@
+name: 3 months issue metrics
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '3 2 1 * *'
+
+jobs:
+  build:
+    name: issue metrics
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Get dates for last month
+      shell: bash
+      run: |
+        # Get the current date
+        current_date=$(date +'%Y-%m-%d')
+
+        # Calculate the 3 previous month
+        previous_date=$(date -d "$current_date -3 month" +'%Y-%m-%d')
+        
+        echo "$previous_date..$current_date"
+        echo "last_3_months=$previous_date..$current_date" >> "$GITHUB_ENV"
+
+
+    - name: Run issue-metrics tool
+      id: issue-metrics
+      uses: github/issue-metrics@v2
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SEARCH_QUERY: 'repo:robotology/icub-tech-support is:issue label:"ergoCub 1.0 S/N:000" closed:${{ env.last_3_months }}'
+
+    - name: Print output of issue metrics tool using Markdown file
+      run: cat ./issue_metrics.md
