@@ -20,8 +20,11 @@ jobs:
       with:
         template-path: .github/ISSUE_TEMPLATE/support-request.yml
         
-    # - name: Print the fields
-    #   run: echo "${{ steps.issue-parser.outputs.jsonString }}"
+    - name: Print the fields
+      run: echo "${PARSER_FIELDS}"
+      # use env variables as per https://github.com/orgs/community/discussions/32012#discussioncomment-3558892
+      env:
+        PARSER_FIELDS: ${{ steps.issue-parser.outputs.jsonString }}
 
     - name: Check Selected Robot
       id: check-1
@@ -66,18 +69,22 @@ jobs:
       if: env.verify=='yes'
       id: check-2
       run: |
-        if [ "${{ steps.check-1.outputs.ROBOT_NAME }}" == "Robot Name" ]; then
+        if [ "${ISSUE_TITLE}" == "" ] || [ "${ISSUE_TITLE}" == "" ] || [ "${{ steps.check-1.outputs.ROBOT_NAME }}" == "Robot Name" ]; then
           echo "WARNING_BODY=- [ ] give the issue a meaningful Title." >> $GITHUB_OUTPUT
           echo "trigger_warning=yes" >> $GITHUB_ENV
         else
           echo "WARNING_BODY=- [x] give the issue a meaningful Title." >> $GITHUB_OUTPUT
         fi
+      env:
+        ISSUE_TITLE: ${{ github.event.issue.title }}
+        TITLE_PLACEHOLDER: ${{ steps.issue-parser.outputs.issueparser_title }}
 
     - name: Check Issue Description
+      if: env.verify=='yes'
       id: check-3
       run: |
-        echo ${#DESCRIPTION}
-        if [ "$DESCRIPTION" == "" ]  || [ ${#DESCRIPTION} -lt 30 ]; then
+        echo ${DESCRIPTION}
+        if [ "${DESCRIPTION}" == "" ]  || [ ${DESCRIPTION} -lt 30 ]; then
         echo "WARNING_BODY=- [ ] give the issue a meaningful Description (at least 30 characters)." >> $GITHUB_OUTPUT
         echo "trigger_warning=yes" >> $GITHUB_ENV
         else
