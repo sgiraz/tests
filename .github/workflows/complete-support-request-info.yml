@@ -74,7 +74,7 @@ jobs:
         fi
       env:
         ISSUE_TITLE: ${{ github.event.issue.title }}
-        TITLE_PLACEHOLDER: ${{ steps.issue-parser.outputs.issueparser_title }}
+        TITLE_PLACEHOLDER: "[Give a meaningful title but don't enter the robot name here]"
 
     - name: Check Issue Description
       id: check-3
