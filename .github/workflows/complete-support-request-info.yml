@@ -80,8 +80,8 @@ jobs:
       id: check-3
       run: |
         echo ${#DESCRIPTION}
-        if [ "${DESCRIPTION}" == "" ]  || [ ${#DESCRIPTION} -lt 30 ]; then
-        echo "WARNING_BODY=- [ ] give the issue a meaningful Description (at least 30 characters)." >> $GITHUB_OUTPUT
+        if [ "${DESCRIPTION}" == "" ]  || [ ${#DESCRIPTION} -lt 100 ]; then
+        echo "WARNING_BODY=- [ ] give the issue a meaningful Description (at least 100 characters)." >> $GITHUB_OUTPUT
         echo "trigger_warning=yes" >> $GITHUB_ENV
         else
         echo "WARNING_BODY=- [x] give the issue a meaningful Description." >> $GITHUB_OUTPUT
