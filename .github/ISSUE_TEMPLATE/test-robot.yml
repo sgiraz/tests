@@ -86,7 +86,7 @@ body:
       - "Right arm"
       - "Left leg"
       - "Right leg"
- validations:
+  validations:
    required: true
 - type: dropdown
   id: reason
