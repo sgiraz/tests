@@ -9,9 +9,11 @@ body:
       Write here a meeaningful description of the task
   validations:
     required: true
-- type: markdown
-  attributes:
-    value: |
-      ### Tasks
-          - [x] tendon replaced
-          - [ ] joint tested successfully
+- type: textarea
+    attributes:
+      label: Definition of Done
+      description: |
+        ```[tasklist]
+        - [ ] task 1
+        - [ ] task 2
+        ```
