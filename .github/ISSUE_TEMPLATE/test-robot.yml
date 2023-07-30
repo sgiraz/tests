@@ -69,8 +69,8 @@ body:
       - "R1 S/N:001"
       - "R1 S/N:002"
       - "R1 S/N:003"
-  required: true
-- type: dropdown
+  validations:
+    required: true- type: dropdown
   id: parts
   attributes:
     label: Parts 🦾
@@ -85,8 +85,8 @@ body:
       - "Right arm"
       - "Left leg"
       - "Right leg"
-    required: true
-
+ validations:
+   required: true
 - type: dropdown
   id: reason
   attributes:
@@ -96,8 +96,8 @@ body:
       - "Maintenance"
       - "Production"
       - "Other"
+  validations:
     required: true
-
 - type: textarea
   attributes:
     label: Additional context
