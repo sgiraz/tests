@@ -12,4 +12,5 @@ body:
 - type: textarea
     attributes:
       label: Definition of Done
-      placeholder: task 1
+      placeholder: |
+        task 1
