@@ -96,7 +96,7 @@ body:
 - type: textarea
   attributes:
     label: Additional context
-    desription: |
+    description: |
       Add any other information about the test here.
     placeholder: |
       We are required to test the robot before shipping it to the customer.
