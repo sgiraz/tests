@@ -12,5 +12,9 @@ body:
 - type: textarea
   attributes:
     label: Definition of Done
-    placeholder: |
-        - [ ] task 1
+    description: |
+      ```[tasklist]
+      ### Tasks
+      - [x] tendon replaced
+      - [ ] joint tested successfully
+      ```
