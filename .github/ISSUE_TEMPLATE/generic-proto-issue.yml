@@ -16,3 +16,5 @@ body:
       - [ ] task 1
       - [ ] task 2
       - [ ] ...
+    validations:
+      requiered: true
