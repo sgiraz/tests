@@ -1,7 +1,6 @@
 name: ⚙️ Task
 description: Template to create a new task
 labels: team-proto
-assignees: ''
 body:
 - type: textarea
   attributes:
@@ -10,3 +9,11 @@ body:
       Write here a meeaningful description of the task
   validations:
     required: true
+- type: textarea
+    attributes:
+        label: Definition of Done
+        description: |
+            ```[tasklist]
+            ### Tasks
+            - [x] tendon replaced
+            - [ ] joint tested successfully
