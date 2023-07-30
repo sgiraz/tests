@@ -13,5 +13,6 @@ body:
   attributes:
     label: Definition of Done
     placeholder: |
-      - [x] tendon replaced
-      - [ ] joint tested successfully
+      - [ ] task 1
+      - [ ] task 2
+      - [ ] ...
