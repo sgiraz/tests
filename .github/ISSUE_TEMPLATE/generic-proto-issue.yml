@@ -12,9 +12,8 @@ body:
 - type: markdown
   attributes:
     value: |
-    ```[tasklist]
-    ### Tasks
-      - [x] tendon replaced
-      - [ ] joint tested successfully
-    ```
-  
+      ```[tasklist]
+      ### Tasks
+        - [x] tendon replaced
+        - [ ] joint tested successfully
+      ```
