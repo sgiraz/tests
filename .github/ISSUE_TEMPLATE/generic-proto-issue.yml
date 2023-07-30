@@ -10,7 +10,7 @@ body:
   validations:
     required: true
 - type: textarea
-    attributes:
-      label: Definition of Done
-      placeholder: |
-        task 1
+  attributes:
+    label: Definition of Done
+    placeholder: |
+        - [ ] task 1
