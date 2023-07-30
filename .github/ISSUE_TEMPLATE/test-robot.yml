@@ -70,7 +70,8 @@ body:
       - "R1 S/N:002"
       - "R1 S/N:003"
   validations:
-    required: true- type: dropdown
+    required: true
+- type: dropdown
   id: parts
   attributes:
     label: Parts 🦾
