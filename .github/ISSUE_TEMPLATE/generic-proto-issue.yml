@@ -12,8 +12,6 @@ body:
 - type: textarea
     attributes:
       label: Definition of Done
-      placeholder: |
-        ```[tasklist]
+      description: |
         - [ ] task 1
         - [ ] task 2
-        ```
