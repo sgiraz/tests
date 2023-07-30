@@ -9,3 +9,12 @@ body:
       Write here a meeaningful description of the task
   validations:
     required: true
+- type: markdown
+  attributes:
+    value: |
+      ```[tasklist]
+        ### Tasks
+        - [x] tendon replaced
+        - [ ] joint tested successfully
+      ```
+  
