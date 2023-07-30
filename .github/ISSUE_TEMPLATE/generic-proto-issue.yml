@@ -13,5 +13,5 @@ body:
   attributes:
     value: |
       ### Tasks
-        - [x] tendon replaced
-        - [ ] joint tested successfully
+          - [x] tendon replaced
+          - [ ] joint tested successfully
