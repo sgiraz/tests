@@ -28,7 +28,6 @@ body:
     required: true
 
 - type: checkboxes
-  id: cdc
   attributes:
     label: Insert the Cost Center (aka CDC)
     description: Select here the cost center where you have to allocate the cost of the material for your request. You can find simplified list of them [here](https://github.com/icub-tech-iit/tickets/blob/master/cdc.md).
@@ -52,7 +51,6 @@ body:
 
 
 - type: textarea
-  id: Input notes
   attributes:
     label: Further details
     description: "Insert here furhter details of your request (optional)"
