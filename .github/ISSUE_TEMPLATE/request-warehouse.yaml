@@ -79,7 +79,6 @@ body:
 
 - type: markdown
   attributes:
-    label: Read Carefully
     value: |
       >**Important**
       >Please add the label of your Research Line (for iCub Tech member insert team name as well)
