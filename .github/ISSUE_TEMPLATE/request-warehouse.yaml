@@ -57,7 +57,7 @@ body:
 
 - type: dropdown
   attributes:
-    label: Material already retrieved?
+    label: Material already retrieved from the warehouse?
     options:
       - "Yes"
       - "No"
@@ -92,3 +92,4 @@ body:
 
       - Add the label of your Research Line (for `iCub-Tech` member insert team name as well)
       - Use the label `priority-urgent` (🔴) only for urgent items (max 5 times per years for RL)
+      - Close the issue when the material is retrieved from the warehouse
