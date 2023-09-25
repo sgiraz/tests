@@ -59,8 +59,8 @@ body:
   attributes:
     label: Material already retrieved?
     options:
-      - Yes
-      - No
+      - "Yes"
+      - "No"
     default: 1
   validations:
     required: true
