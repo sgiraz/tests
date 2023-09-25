@@ -27,7 +27,6 @@ body:
   validations:
     required: true
 
-body:
 - type: checkboxes
   id: cdc
   attributes:
@@ -52,7 +51,6 @@ body:
     required: true
 
 
-body:
 - type: textarea
   id: Input notes
   attributes:
