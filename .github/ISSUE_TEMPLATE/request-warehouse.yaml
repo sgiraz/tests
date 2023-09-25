@@ -1,7 +1,7 @@
 name: 📦 Warehouse
 description: Ticket for warehouse material
 assignees: Miche19
-title: WAREHOUSE - [Insert here a short description]
+title: WAREHOUSE - [Insert here a short title description]
 labels: warehouse
 
 
@@ -33,7 +33,10 @@ body:
   attributes:
     label: Request description
     description: "Insert here a description of your request"
-    placeholder: "As per https://github.com/icub-tech-iit/task-force-miscellanea/issues/62, @DanielePucci's group has asked to equip iCub 3 with Bluetooth functionalities."
+    placeholder: |
+      "Example:
+      
+       As per https://github.com/icub-tech-iit/task-force-miscellanea/issues/62, @DanielePucci's group has asked to equip iCub 3 with Bluetooth functionalities."
   validations:
     required: true
 
@@ -48,17 +51,14 @@ body:
       - label: WINGST ID 2251 - Daniele Pucci (3C300 I913999900)
       - label: WINGST ID 2250 - CDC Chiara Bartolozzi (3C201 I913999900)
       - label: WINGST ID 1748 - iCubTech (3C031 I913999900)
-      - label: Other (You can find a short list of cost centers in [cdc-list](https://github.com/icub-tech-iit/tickets/blob/master/cdc.md) and a complete list in [wingst](wingst.icub.iit.local)
+      - label: Other (You can find a short list of cost centers in [cdc-list](https://github.com/icub-tech-iit/tickets/blob/master/cdc.md) and a complete list in [wingst](wingst.icub.iit.local))
   validations:
     required: true
-
 
 - type: input
   attributes:
-    label: Other CDC **(only if you selected Other previousely)**
+    label: Other CDC (only if you selected Other previousely)
     placeholder: "WINGST ID XXXX - Facility Name"
-  validations:
-    required: true
 
 
 - type: textarea
