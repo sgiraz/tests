@@ -84,12 +84,3 @@ body:
 
       - Please add the label of your Research Line (for iCub Tech member insert team name as well)
       - Use the label `priority-urgent` only for urgent items (max 5 times per years for RL)
-
-
-- type: textarea
-  id: notes
-  attributes:
-    label: Notes
-    description: "Insert here furhter details of your request (optional)"
-  validations:
-    required: false
