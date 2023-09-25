@@ -80,11 +80,10 @@ body:
 - type: markdown
   attributes:
     value: |
-      >**Important**
-      >Please add the label of your Research Line (for iCub Tech member insert team name as well)
+      ### ⚠️ Read carefully the following instructions before submitting the ticket ⚠️
 
-      >**Important**
-      >Use the label `priority-urgent` only for urgent items (max 5 times per years for RL)
+      - Please add the label of your Research Line (for iCub Tech member insert team name as well)
+      - Use the label `priority-urgent` only for urgent items (max 5 times per years for RL)
 
 
 - type: textarea
