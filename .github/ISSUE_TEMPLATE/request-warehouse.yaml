@@ -34,9 +34,23 @@ body:
     label: Request description
     description: "Insert here a description of your request"
     placeholder: |
-      "Example:
+      Example:
       
-       As per https://github.com/icub-tech-iit/task-force-miscellanea/issues/62, @DanielePucci's group has asked to equip iCub 3 with Bluetooth functionalities."
+      As per https://github.com/icub-tech-iit/task-force-miscellanea/issues/62, @DanielePucci's group has asked to equip iCub 3 with Bluetooth functionalities.
+  validations:
+    required: true
+
+
+- type: textarea
+  id: material
+  attributes:
+    label: Item list
+    description: "IIT-CODE is the part number in Wingst (http://wingst.icub.iit.local)"
+    value: |
+      | Item Name / IIT-CODE | Quantity | Description |
+      |:--------------------:|:--------:|:------------|
+      |  |  |  |
+      |  |  |  |
   validations:
     required: true
 
@@ -61,26 +75,10 @@ body:
     placeholder: "WINGST ID XXXX - Facility Name"
 
 
-- type: textarea
-  id: material
-  attributes:
-    label: List of items and quantities
-    description: "How do you trigger this bug? Please walk us through it step by step."
-    value: |
-      | Item Name / IIT-CODE | Quantity | Description |
-      |:--------------------:|:--------:|:------------|
-      |  |  |  |
-      |  |  |  |
-      |  |  |  |
-      |  |  |  |
-  validations:
-    required: true
-
-
 - type: markdown
   attributes:
     value: |
       ### ⚠️ Read carefully the following instructions before submitting the ticket ⚠️
 
-      - [ ] Add the label of your Research Line (for `iCub-Tech` member insert team name as well)
-      - [ ] Use the label `priority-urgent` (🔴) only for urgent items (max 5 times per years for RL)
+      - Add the label of your Research Line (for `iCub-Tech` member insert team name as well)
+      - Use the label `priority-urgent` (🔴) only for urgent items (max 5 times per years for RL)
