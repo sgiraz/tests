@@ -1,0 +1,62 @@
+name: 📦 Warehouse
+description: Ticket for warehouse material
+assignees: Miche19
+title: WAREHOUSE - [*Insert here a short description*]
+labels: warehouse
+
+
+body:
+- type: input
+  attributes:
+    label: Applicant with Github username
+    placeholder: "Name Surname, @username"
+  validations:
+    required: true
+
+- type: input
+  attributes:
+    label: Applicant's Supervisor with Github username
+    placeholder: "Name Surname, @username"
+  validations:
+    required: true
+
+- type: input
+  attributes:
+    label: Desired Complete Date
+    placeholder: "Day/Month/Year"
+  validations:
+    required: true
+
+body:
+- type: checkboxes
+  id: cdc
+  attributes:
+    label: Insert the Cost Center (aka CDC)
+    description: Select here the cost center where you have to allocate the cost of the material for your request. You can find simplified list of them [here](https://github.com/icub-tech-iit/tickets/blob/master/cdc.md).
+                 For a complete lists of the cost centers visit [wingst](wingst.icub.iit.local)
+    options:
+      - label: WINGST ID 2246 - Lorenzo Natale (3C021 I913999900)
+      - label: WINGST ID 2251 - Daniele Pucci (3C300 I913999900)
+      - label: WINGST ID 2250 - CDC Chiara Bartolozzi (3C201 I913999900)
+      - label: WINGST ID 1748 - iCubTech (3C031 I913999900)
+      - label: Other
+  validations:
+    required: true
+
+
+- type: input
+  attributes:
+    label: Other CDC (only if you selected `Other` previousely)
+    placeholder: "WINGST ID XXXX - Facility Name"
+  validations:
+    required: true
+
+
+body:
+- type: textarea
+  id: Input notes
+  attributes:
+    label: Further details
+    description: "Insert here furhter details of your request (optional)"
+  validations:
+    required: false
