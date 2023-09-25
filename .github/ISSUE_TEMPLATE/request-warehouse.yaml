@@ -49,22 +49,49 @@ body:
     options:
       - label: WINGST ID 2246 - Lorenzo Natale (3C021 I913999900)
       - label: WINGST ID 2251 - Daniele Pucci (3C300 I913999900)
-      - label: WINGST ID 2250 - CDC Chiara Bartolozzi (3C201 I913999900)
+      - label: WINGST ID 2250 - Chiara Bartolozzi (3C201 I913999900)
       - label: WINGST ID 1748 - iCubTech (3C031 I913999900)
-      - label: Other (You can find a short list of cost centers in [cdc-list](https://github.com/icub-tech-iit/tickets/blob/master/cdc.md) and a complete list in [wingst](wingst.icub.iit.local))
+      - label: Other (You can find a short list of cost centers in [cdc-list](https://github.com/icub-tech-iit/tickets/blob/master/cdc.md), and a complete list in [wingst](wingst.icub.iit.local))
   validations:
     required: true
 
 - type: input
   attributes:
-    label: Other CDC (only if you selected Other previousely)
+    label: Other CDC (only if you checked "Other" in the previous section)
     placeholder: "WINGST ID XXXX - Facility Name"
+
+
+- type: textarea
+  id: material
+  attributes:
+    label: List of items and quantities
+    description: "How do you trigger this bug? Please walk us through it step by step."
+    value: |
+      | Item Name / IIT-CODE | Quantity | Description |
+      |:-------------------:|:--------:|:------------|
+      |  |  |  |
+      |  |  |  |
+      |  |  |  |
+      |  |  |  |
+  validations:
+    required: true
+
+
+- type: markdown
+  attributes:
+    label: Read Carefully!
+    values: |
+      >**Important**
+      >Please add the label of your Research Line (for iCub Tech member insert team name as well)
+
+      >**Important**
+      >Use the label `priority-urgent` only for urgent items (max 5 times per years for RL)
 
 
 - type: textarea
   id: notes
   attributes:
-    label: Further details
+    label: Notes
     description: "Insert here furhter details of your request (optional)"
   validations:
     required: false
