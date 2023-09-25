@@ -8,14 +8,16 @@ labels: warehouse
 body:
 - type: input
   attributes:
-    label: Applicant with Github username
+    label: Applicant
+    description: "Insert here the name of the applicant and his/her Github username"
     placeholder: "Name Surname, @github-username"
   validations:
     required: true
 
 - type: input
   attributes:
-    label: Applicant's Supervisor with Github username
+    label: Applicant's Supervisor
+    description: "Insert here the name of the applicant's supervisor and his/her Github username"
     placeholder: "Name Surname, @github-username"
   validations:
     required: true
@@ -32,7 +34,6 @@ body:
   id: details
   attributes:
     label: Request description
-    description: "Insert here a description of your request"
     placeholder: |
       Example:
       
