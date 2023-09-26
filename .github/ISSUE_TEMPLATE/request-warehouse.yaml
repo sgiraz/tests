@@ -8,9 +8,9 @@ body:
 - type: markdown
   attributes:
     value: |
-    ---
+      ---
       ### 🚨 Before submitting the ticket, vefify on [wingst](http://wingst.icub.iit.local) that the material is available in the warehouse, if not please open a [purchase issue](https://github.com/icub-tech-iit/purchases/issues/) 🚨
-    ---
+      ---
 
 - type: input
   attributes:
