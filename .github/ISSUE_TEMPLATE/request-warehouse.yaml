@@ -98,8 +98,7 @@ body:
 
 - type: markdown
   attributes:
-    value: |
-      <src="../../assets/cdc_wingst_example.png"/>
+    value: "![cdc](../../assets/cdc_wingst_example.png)"
 
 
 - type: markdown
