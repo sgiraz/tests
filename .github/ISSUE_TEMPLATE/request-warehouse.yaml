@@ -99,7 +99,7 @@ body:
 - type: markdown
   attributes:
     value: |
-      ![cdc](../../assets/cdc_wingst_example.png)
+      ![cdc](../assets/cdc_wingst_example.png)
 
 
 - type: markdown
