@@ -93,13 +93,8 @@ body:
 - type: input
   attributes:
     label: Other CDC (only if you checked "Other" in the previous section)
-    description: "see the example in the screenshot below"
+    description: "see a ![screenshot-example](../tree/master/assets/cdc_wingst_example.png)"
     placeholder: "[WINGST ID] [Cdc1] [Cdc2] [Cdc3] [Description] - [Facility Name]"
-
-- type: markdown
-  attributes:
-    value: |
-      ![cdc](../tree/master/assets/cdc_wingst_example.png)
 
 
 - type: markdown
