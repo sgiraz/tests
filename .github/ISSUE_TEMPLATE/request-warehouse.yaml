@@ -46,12 +46,14 @@ body:
   id: material
   attributes:
     label: Material item list
-    description: "IIT-CODE is the part number in Wingst (http://wingst.icub.iit.local)"
+    description: |
+      IIT-CODE is the part number in Wingst (http://wingst.icub.iit.local).
+      Serial Number (S/N) must be provided only if it is available and the material has already been retrieved from the warehouse.
     value: |
-      | IIT-CODE | Revision | Quantity | Description |
-      |:--------:|:--------:|:--------:|:------------|
-      |  |  |  |  |
-      |  |  |  |  |
+      | IIT-CODE | Serial Number (S/N) | Revision | Quantity | Description |
+      |:--------:|:--------:|:--------:|:--------:|:------------|
+      |  |  |  |  |  |
+      |  |  |  |  |  |
   validations:
     required: true
 
@@ -66,7 +68,7 @@ body:
 
 - type: dropdown
   attributes:
-    label: Material already retrieved from the warehouse?
+    label: Has the material already been retrieved from the warehouse?
     options:
       - "Yes"
       - "No"
@@ -93,7 +95,7 @@ body:
 - type: input
   attributes:
     label: Other CDC (only if you checked "Other" in the previous section)
-    description: "see a [screenshot-example](../tree/master/assets/cdc_wingst_example.png)"
+    description: "see a [screenshot example here](../tree/master/assets/cdc_wingst_example.png)"
     placeholder: "[WINGST ID] [Cdc1] [Cdc2] [Cdc3] [Description] - [Facility Name]"
 
 
