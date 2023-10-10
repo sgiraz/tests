@@ -47,8 +47,8 @@ body:
   attributes:
     label: Material item list
     description: |
-      IIT-CODE is the part number in Wingst (http://wingst.icub.iit.local).
-      Serial Number (S/N) must be provided only if it is available and the material has already been retrieved from the warehouse.
+      - IIT-CODE is the part number in Wingst (http://wingst.icub.iit.local).
+      - Serial Number (S/N) must be provided only if it is available and the material has already been retrieved from the warehouse.
     value: |
       | IIT-CODE | Serial Number (S/N) | Revision | Quantity | Description |
       |:--------:|:--------:|:--------:|:--------:|:------------|
