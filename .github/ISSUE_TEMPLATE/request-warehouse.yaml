@@ -50,7 +50,7 @@ body:
       - IIT-CODE is the part number in Wingst (http://wingst.icub.iit.local).
       - Serial Number (S/N) must be provided only if it is available and the material has already been retrieved from the warehouse.
     value: |
-      | IIT-CODE | Revision | Quantity | Description | [Serial Number (S/N)] |
+      | IIT-CODE | Revision | Quantity | Description | [ Serial Number (S/N) ] |
       |:--------:|:--------:|:--------:|:--------:|:------------|
       |  |  |  |  |  |
       |  |  |  |  |  |
@@ -69,6 +69,7 @@ body:
 - type: dropdown
   attributes:
     label: Has the material already been retrieved from the warehouse?
+    description: If you select "Yes", remember to add the serial number in the "Material item list" section.
     options:
       - "Yes"
       - "No"
