@@ -1,0 +1,61 @@
+name: ✈️ Travel Report
+description: Template to create a new travel report 
+labels: team-proto
+body:
+- type: dropdown
+  id: robot
+  attributes:
+    label: Robot Name 🤖
+    description: Please select the name of the robot involved in the event.
+    options:
+      - "ergoCub 1.0 S/N:000"
+      - "ergoCub 1.1 S/N:001"
+      - "ergoCub 1.1 S/N:002"
+      - "iCubGenova04 (iRonCub1) S/N:031"
+      - "iCubGenova09 (iRonCub3) S/N:000"
+      - "R1 S/N:000"
+      - "R1 S/N:001"
+      - "R1 S/N:002"
+      - "R1 S/N:003"
+    multiple: true
+  validations:
+    required: true
+
+
+- type: textarea
+  attributes:
+    label: Report description
+    description: This issue will track all materials used, interventions made, and issues encountered during the event. Add the report of each day in this field.
+    value: |
+      ## Report day 1 
+      - Material removed from the toolboxes:
+        - ...
+
+      - Material used: 
+        - ... 
+
+      - Activities done (maintenance interventions): 
+        - ...
+
+      **Note:**
+      - ...
+
+      ### IIT Codes of material used / initially missing
+
+      | IIT-CODE | Revision | Quantity | Description | [ Serial Number (S/N) ] |
+      |:--------:|:--------:|:--------:|:-----------:|:------------------------|
+      |  |  |  |  |  |
+      |  |  |  |  |  |
+
+      ---
+  validations:
+    required: true
+
+
+- type: textarea
+  attributes:
+    label: Definition of Done
+    placeholder: |
+      - [ ] All the activities have been reported
+  validations:
+    requiered: true
