@@ -13,10 +13,6 @@ body:
       - "ergoCub 1.1 S/N:002"
       - "iCubGenova04 (iRonCub1) S/N:031"
       - "iCubGenova09 (iRonCub3) S/N:000"
-      - "R1 S/N:000"
-      - "R1 S/N:001"
-      - "R1 S/N:002"
-      - "R1 S/N:003"
     multiple: true
   validations:
     required: true
@@ -24,21 +20,17 @@ body:
 
 - type: textarea
   attributes:
-    label: Report description
-    description: This issue will track all materials used, interventions made, and issues encountered during the event. Add the report of each day in this field.
+    label: Report Day 1
+    description: This issue will track all materials used, interventions made, and issues encountered during the event.
     value: |
-      ## Report day 1 
+      - Material inserted in the toolboxes:
+        - n/a
+
       - Material removed from the toolboxes:
         - ...
 
-      - Material used: 
-        - ... 
-
       - Activities done (maintenance interventions): 
         - ...
-
-      **Note:**
-      - ...
 
       ### IIT Codes of material used / initially missing
 
@@ -47,9 +39,13 @@ body:
       |  |  |  |  |  |
       |  |  |  |  |  |
 
+      >**Note:**
+      >- ...
+
       ---
   validations:
     required: true
+
 
 
 - type: textarea
