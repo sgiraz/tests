@@ -7,7 +7,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
+        Thanks for taking the time to fill out this bug report! 🙏🏻
 
   - type: dropdown
     id: domain
@@ -46,7 +46,7 @@ body:
     attributes:
       label: Corrective actions
       description: Please, if you have any corrective actions to propose, feel free to add them below.
-      value: |
+      placeholder: |
         - [ ] Insert here the *Corrective action n.1*
         - [ ] Insert here the *Corrective action n.2*
         - [ ] ...
