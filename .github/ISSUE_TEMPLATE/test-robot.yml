@@ -108,10 +108,10 @@ body:
 
 - type: textarea
   attributes:
-    label: Definition of Done divided by robot's part
+    label: Definition of Done
     description: Before submitting, remove the part not involved in the robot's test
     value: |
-        ### Preliminary checks / tests
+        #### Preliminary checks/tests
         
         - [ ] General visual inspection
         - [ ] Test power on (both `head` and `motors`)
@@ -119,18 +119,18 @@ body:
         - [ ] Update the firmware of all the boards
         - [ ] Test the joints encoders reading
 
-        ### Specific tests for upper body
+        #### Specific tests for upper body
 
         - [ ] Head calibration
         - [ ] Arms calibration
         - [ ] Test joints motor moving
 
-        ### Specific tests for Lower body
+        #### Specific tests for Lower body
 
         - [ ] Legs calibration
         - [ ] Test joints motors moving
 
-        ### Final tests before delivery
+        #### Final tests before delivery
 
         - [ ] Test the cameras
         - [ ] Test the microphones & speakers
