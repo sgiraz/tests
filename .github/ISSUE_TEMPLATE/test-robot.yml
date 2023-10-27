@@ -1,6 +1,5 @@
 name: 🤖 Test Robot 
 description: Template to create a report for a robot test
-title: "[Give a meaningful title but don't enter the robot name here]"
 
 body:
 - type: dropdown
@@ -107,3 +106,42 @@ body:
     placeholder: |
       We are required to test the robot before shipping it to the customer.
 
+- type: textarea
+  attributes:
+  label: Definition of Done divided by robot's part
+  description: Before submitting, remove the part not involved in the robot's test
+  value: |
+      ### Preliminary checks / tests
+      
+      - [ ] General visual inspection
+      - [ ] Test power on (both `head` and `motors`)
+      - [ ] Test the discovery of the boards using `Firmwareupdater`
+      - [ ] Update the firmware of all the boards
+      - [ ] Test the joints encoders reading
+
+      ### Specific tests for upper body
+
+      - [ ] Head calibration
+      - [ ] Arms calibration
+      - [ ] Test joints motor moving
+
+      ### Specific tests for Lower body
+
+      - [ ] Legs calibration
+      - [ ] Test joints motors moving
+
+      ### Final tests before delivery
+
+      - [ ] Test the cameras
+      - [ ] Test the microphones & speakers
+      - [ ] Test the skin
+      - [ ] Test the encoders and joints limits
+      - [ ] Test the face expressions
+      - [ ] Test the yoga demo
+      - [ ] Test force control
+      - [ ] Red Ball demo
+      - [ ] Clean up the robot folder (all the files created to calibrate the sub-assembly)
+      - [ ] Make a PR in [robots-configuration](https://github.com/robotology/robots-configuration)
+      - [ ] Delete from the head the older `robotology-superbuild`
+      - [ ] Clone a new `robotology-superbuild` in the head from the lastest distro
+      - [ ] Test the setup from the laptop with `yarpmanager` (all the functions)
