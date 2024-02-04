@@ -8,7 +8,6 @@ body:
     label: Robot Name 🤖
     description: Please select the name of the robot to test.
     options:
-      - "None"
       - "ergoCub 1.0 S/N:000"
       - "ergoCub 1.1 S/N:001"
       - "ergoCub 1.1 S/N:002"
@@ -69,7 +68,8 @@ body:
       - "R1 S/N:001"
       - "R1 S/N:002"
       - "R1 S/N:003"
-
+  validations:
+    required: true
 - type: dropdown
   id: parts
   attributes:
